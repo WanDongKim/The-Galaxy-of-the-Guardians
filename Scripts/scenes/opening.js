@@ -33,7 +33,7 @@ var scenes;
         openingScene.prototype.Start = function () {
             this._background = new objects.Background(this.assetManager);
             this._logo = new objects.Button(this.assetManager, "logo", 320, 220);
-            this._openingLogo = new objects.Label("The Galaxy of the Guardians", "30px", "Consolas", "#FFFFFF", 100, 310);
+            this._openingLogo = new objects.Label("The Galaxy of the Guardians", "30px", "SpaceComic", "#FFFFFF", 100, 310);
             this._btnStart = new objects.Button(this.assetManager, "btnStart", 320, 390);
             this.Main();
             console.log("start");

@@ -86,9 +86,10 @@ var scenes;
             }
             this._enemy.forEach(function (enemy) {
                 enemy.Update();
-                managers.Collision.Check(_this._plane, enemy);
+                //managers.Collision.Check(this._plane, enemy);
                 if (enemy.isColliding) {
                     enemy.visible = false;
+                    _this.removeChild(enemy);
                 }
                 if (_this._plane.Life == 0) {
                     managers.Game.currentScene = config.Scene.GAMEOVER;
@@ -101,7 +102,7 @@ var scenes;
                 missile.position.y = _this._plane.y;
                 missile.Update();
             });
-            //this._collision.crush(this._missile,this._enemy);
+            this._collision.crush(this._missile, this._enemy);
             if (this._scoreBoard.Lives <= 0) {
                 managers.Game.currentScene = config.Scene.GAMEOVER;
                 this._backgroundSound.stop();

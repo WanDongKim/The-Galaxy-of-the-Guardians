@@ -104,9 +104,10 @@ module scenes {
             this._enemy.forEach(enemy => {
                 enemy.Update();
 
-                managers.Collision.Check(this._plane, enemy);
+                //managers.Collision.Check(this._plane, enemy);
                 if(enemy.isColliding){
                     enemy.visible = false;
+                    this.removeChild(enemy);
                 }
                 if (this._plane.Life == 0) {
                     managers.Game.currentScene = config.Scene.GAMEOVER;
@@ -120,7 +121,8 @@ module scenes {
                 missile.position.y = this._plane.y;
                 missile.Update();
             });
-            //this._collision.crush(this._missile,this._enemy);
+            
+            this._collision.crush(this._missile,this._enemy);
 
             if (this._scoreBoard.Lives <= 0) {
                 managers.Game.currentScene = config.Scene.GAMEOVER;

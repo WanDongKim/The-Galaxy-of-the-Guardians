@@ -51,44 +51,35 @@ module managers {
                                 }
                                 break;
                         }
-                      }//else if(one.name = "missile"){
-                    //      switch(other.name){
-                    //          case "enemy":
-                    //          other.life -=1;
-                    //          if(other.life = 0 ){
-                    //              console.log("AA");
-                    //              other.visible = false;
-                    //          }
-                    //          break;
-                    //      }
-                    //  }
+                      }
                 }
             }
             else {
                 other.isColliding = false;
             }
         }
-        // public crush(missile:objects.Missile[], enemy:objects.Enemy[]){
-        //      //check to see if object is colliding
 
-        //       missile.forEach(missiles => {
-        //           enemy.forEach(enemies =>{
-        //             //console.log("missile - enemy");
+        public crush(missile:objects.Missile[], enemy:objects.Enemy[]){
+             //check to see if object is colliding
+
+              missile.forEach(missiles => {
+                  enemy.forEach(enemies =>{
+                    //console.log("missile - enemy");
                     
-        //             if(math.Vector2.distance(missiles.position, enemies.position) > (missiles.centerY + enemies.centerY - 30)){
-        //                 console.log(missiles.position);
-        //                 if(!enemies.isColliding){
-        //                     enemies.isColliding = true;
-        //                     enemies.life -=1
-        //                     if(enemies.life =0){
-        //                         enemies.visible = false;
-        //                     }
-        //                 }
-        //             }else{
-        //                 enemies.isColliding = false;
-        //             }
-        //           });
-        //     });
-        // }
+                    if(math.Vector2.distance(missiles.position, enemies.position) > (missiles.centerY + enemies.centerY - 30)){
+                        console.log("Missile collided with an enemy");
+                        if(!enemies.isColliding){
+                            enemies.isColliding = true;
+                            enemies.life -=1
+                            if(enemies.life =0){
+                                enemies.visible = false;
+                            }
+                        }
+                    }else{
+                        enemies.isColliding = false;
+                    }
+                  });
+            });
+        }
     }
 }
