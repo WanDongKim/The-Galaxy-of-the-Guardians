@@ -1,8 +1,8 @@
 /*
     Name : Dongwan Kim
-    Version : v1.0
-    Last_modification : Feb 21, 2018
-    Description : Created Gameobject object
+    Version : v1.1
+    Last_modification : Mar 16, 2018
+    Description : Added life property
 */
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -56,6 +56,16 @@ var objects;
             enumerable: true,
             configurable: true
         });
+        Object.defineProperty(GameObject.prototype, "life", {
+            get: function () {
+                return this._life;
+            },
+            set: function (newLife) {
+                this._life = newLife;
+            },
+            enumerable: true,
+            configurable: true
+        });
         //PRIVATE METHODS
         GameObject.prototype._init = function () {
             this.width = this.getBounds().width;
@@ -66,6 +76,7 @@ var objects;
             this.regY = this.centerY;
             this.position = new math.Vector2(this.x, this.y);
             this.isColliding = false;
+            this.Life = this._life;
         };
         //PUBLIC METHODS
         GameObject.prototype.Reset = function () {

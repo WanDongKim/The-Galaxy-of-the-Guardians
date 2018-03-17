@@ -10,9 +10,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 /*
     Name : Dongwan Kim
-    Version : v1.2
-    Last_modification : Feb 25, 2018
-    Description : Added keyboard control to move the plane
+    Version : v1.3
+    Last_modification : Mar 16 2018
+    Description : Deleted life private variable and connected with gameobject life
 */
 var objects;
 (function (objects) {
@@ -21,11 +21,12 @@ var objects;
         //CONSTRUTOR
         function Plane(assetManager) {
             var _this = _super.call(this, assetManager, "plane") || this;
-            _this._life = 3;
+            _this.life = 3;
             _this.Start();
             return _this;
         }
         Object.defineProperty(Plane, "centerX", {
+            //PRIVATE VARIABLES
             //PUBLIC PROPERTIES
             get: function () {
                 return this.centerX;
@@ -42,7 +43,7 @@ var objects;
         });
         Object.defineProperty(Plane.prototype, "Life", {
             get: function () {
-                return this._life;
+                return this.life;
             },
             enumerable: true,
             configurable: true
@@ -87,9 +88,6 @@ var objects;
             this.position = new math.Vector2(this.x, this.y);
             this.Move();
             this.CheckBounds();
-        };
-        Plane.prototype.MinusLife = function () {
-            this._life -= 1;
         };
         return Plane;
     }(objects.GameObject));

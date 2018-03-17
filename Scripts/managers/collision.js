@@ -1,8 +1,8 @@
 /*
     Name : Dongwan Kim, Jowon Shin
-    Version : v1.5
+    Version : v1.6
     Last_modification : Mar 16, 2018
-    Description : added life item
+    Description : Changed check methods
 */
 var managers;
 (function (managers) {
@@ -14,15 +14,15 @@ var managers;
         };
         Collision.prototype.update = function () {
         };
-        Collision.prototype.check = function (plane, other) {
+        Collision.prototype.check = function (one, other) {
             //check to see if object is colliding
-            if (math.Vector2.distance(plane.position, other.position) < (plane.centerY + other.centerY - 30)) {
+            if (math.Vector2.distance(one.position, other.position) < (one.centerY + other.centerY - 30)) {
                 if (!other.isColliding) {
                     other.isColliding = true;
                     console.log("Crushed with " + other.name);
                     switch (other.name) {
                         case "enemy":
-                            plane.MinusLife();
+                            one.life -= 1;
                             managers.Game.scoreboardManager.Lives -= 1;
                             createjs.Sound.play("crashSound");
                             break;
@@ -35,6 +35,7 @@ var managers;
                             }
                             break;
                         case "lifeitem":
+                            one.life += 1;
                             managers.Game.scoreboardManager.Lives += 1;
                             createjs.Sound.play("gettingItemSound"); //sound must be changed
                             if (managers.Game.scoreboardManager.Lives >= 5) {

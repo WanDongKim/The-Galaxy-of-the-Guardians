@@ -10,9 +10,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 /*
     Name : Dongwan Kim
-    Version : v1.1
-    Last_modification : Feb 26, 2018
-    Description : Set the visibility when they reset
+    Version : v1.2
+    Last_modification : Mar 16, 2018
+    Description : Added life value
 */
 var objects;
 (function (objects) {
@@ -24,6 +24,7 @@ var objects;
         function Enemy(assetManager) {
             var _this = _super.call(this, assetManager, "enemy") || this;
             _this.Start();
+            _this.life = 2;
             return _this;
         }
         //PRIVATE METHODS

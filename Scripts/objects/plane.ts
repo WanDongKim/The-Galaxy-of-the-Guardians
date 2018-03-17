@@ -1,13 +1,12 @@
 /*
     Name : Dongwan Kim
-    Version : v1.2
-    Last_modification : Feb 25, 2018
-    Description : Added keyboard control to move the plane
+    Version : v1.3
+    Last_modification : Mar 16 2018
+    Description : Deleted life private variable and connected with gameobject life
 */
 module objects{
     export class Plane extends objects.GameObject {
         //PRIVATE VARIABLES
-            private _life:number;
         //PUBLIC PROPERTIES
             public static get centerX():number{
                 return this.centerX;
@@ -16,12 +15,12 @@ module objects{
                 return this.centerY;
             }
             public get Life():number{
-                return this._life;
+                return this.life;
             }
         //CONSTRUTOR
         constructor(assetManager:createjs.LoadQueue){
             super(assetManager,"plane");
-            this._life = 3;
+            this.life = 3;
             this.Start();
         }
         //PRIVATE METHODS
@@ -69,10 +68,6 @@ module objects{
             this.CheckBounds();
         }
         
-        public MinusLife():void{
-            this._life -= 1;
-        }
-
 
     }
 }
