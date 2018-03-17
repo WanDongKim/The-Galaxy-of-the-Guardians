@@ -27,6 +27,7 @@
         { id: "star", src: "./Assets/images/star.png" },
         { id: "lifeitem", src: "./Assets/images/lifeItem.png" },
         { id: "enemy", src: "./Assets/images/enemyA.png" },
+        { id: "logo", src: "./Assets/images/logo.png" },
         { id: "backgroundSound", src: "./Assets/sounds/background.mp3" },
         { id: "missileSound", src: "./Assets/sounds/missileSound.mp3" },
         { id: "bazoozaSound", src: "./Assets/sounds/bazookaSound.mp3" },

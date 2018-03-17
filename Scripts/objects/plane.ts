@@ -61,7 +61,7 @@ module objects{
         }
         public Start():void{
             this.x = 300;
-            this.y=430;
+            this.y = 430;
         }
         public Update():void{
             this.position = new math.Vector2(this.x, this.y);
