@@ -41,6 +41,6 @@ $ npm install lite-server
 $ lite-server
 ```
 ### 4. In Game
-![alt text](Assets/ingameimage/pro2-1.png)
-![alt text](Assets/ingameimage/pro2-2.png)
-![alt text](Assets/ingameimage/pro2-3.png)
+![alt text](Assets/inGameImg/pro2-1.png)
+![alt text](Assets/inGameImg/pro2-2.png)
+![alt text](Assets/inGameImg/pro2-3.png)
